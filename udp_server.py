@@ -29,7 +29,7 @@ print()
 input("press enter to bind the socket to an ip address & port")
 
 # ask for socket info
-server_address = input("\tplease enter the ip address of this module: ")
+server_address = input("\tplease enter the ip address of this module: ") # this can be handled automatically in-game
 server_port = int(input("\tplease enter a port to use on this module: "))
 
 # bind the socket

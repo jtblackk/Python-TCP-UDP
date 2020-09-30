@@ -72,11 +72,12 @@ server_address = input("please enter the server socket's ip address: ")
 server_port = int(input("please enter the server socket's port number: "))
 print()
 
+
 # step 4: send data to the server.
-# IN-GAME: if the user hasn't bound the client socket to a port, the module will automatically choose a port on the cli1ent's 
-# first attempt to "send." that port will visibly open up on the module. when the user presses "send," a visible packet will
-# fly from the client's opened port to the server's opened port. the user can step in-between the client and the server and
-# obstruct the dataflow. 
+# IN-GAME:  if the user hasn't bound the client socket to a port, the module will automatically choose a port on the cli1ent's 
+#           first attempt to "send." that port will visibly open up on the module. when the user presses "send," a visible packet will
+#           fly from the client's opened port to the server's opened port. the user can step in-between the client and the server and
+#           obstruct the dataflow. 
 
 # option 1: send data automatically. just sending a message with an incrementing number, with a 2-second pause between messages
 if USER_PRESSES_AUTO_SEND_BUTTON: 
