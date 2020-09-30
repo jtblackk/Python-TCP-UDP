@@ -11,7 +11,7 @@ USER_PRESSES_BIND_BUTTON = False
 
 # if set to true, simulates a scenario where the user decided to let the client automatically send data in its send loop.
 # if set to False, then the user must press tell the client every time they wish to send data to the server
-USER_PRESSES_AUTO_SEND_BUTTON = True
+USER_PRESSES_AUTO_SEND_BUTTON = False
 
 #(only applies if USER_PRESSES_AUTO_SEND_BUTTON = False)
 # if set to true, simulates a scenario where the user chooses to type in a message to send to the server
