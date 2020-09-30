@@ -28,8 +28,9 @@ USER_SENDS_CUSTOM_MESSAGE = True
 
 # step 1: create a UDP socket
 # IN-GAME: not 100% sure how we should represent socket creation. 
+input("press enter to create a socket")
 sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-
+print()
 
 # (optional) step 2: bind the socket to the client's ip address and one of it's ports
 # client ip address + random port are automatically assigned to the socket later if not bound.
@@ -37,15 +38,18 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 #           after they press "bind" and type in the port to bind to, the port on the module's port that they specified should 
 #           visibly open up. if they don't press bind, then no ports open yet. 
 if USER_PRESSES_BIND_BUTTON:
+    # bind the socket
+    input("press enter to bind the socket to an ip address & port")
+
     # ask user to enter a port
-    client_address = input("enter the ip address of this module: ")
-    client_port = int(input("enter a port to use on this module: "))
+    client_address = input("\tenter the ip address of this module: ")
+    client_port = int(input("\tenter a port to use on this module: "))
 
     # bind the socket to the desired port
     sock.bind((client_address, client_port))
 
 # DEBUGGING: prints out the address & port bound to the socket
-print("\tclient socket address & port before sending data:", sock.getsockname())
+print("client socket address & port before sending data:", sock.getsockname(), "\n")
 
 
 
@@ -66,7 +70,7 @@ print("\tclient socket address & port before sending data:", sock.getsockname())
 # IN-GAME: user will be prompted to type in which port they want to use on the server module
 server_address = input("please enter the server socket's ip address: ")
 server_port = int(input("please enter the server socket's port number: "))
-
+print()
 
 # step 4: send data to the server.
 # IN-GAME: if the user hasn't bound the client socket to a port, the module will automatically choose a port on the cli1ent's 
@@ -84,9 +88,9 @@ if USER_PRESSES_AUTO_SEND_BUTTON:
         
         # DEBUGGING: just some useful information about what's happening on the client side
         print("---------------------------------------------------------------")
-        print("\tdata sent:", "\'" + data_to_send + "\'")
-        print("\tdata sent from:", sock.getsockname())
+        print("\tdata sent from:", sock.getsockname(), "[client socket/this module]")
         print("\tdata sent to:", (server_address, server_port))
+        print("\tdata sent:", "\'" + data_to_send + "\'")
         print("---------------------------------------------------------------\n")
 
         # update message count and wait before next send
@@ -109,8 +113,9 @@ else:
 
         # DEBUGGING: just some useful information about what's happening on the client side
         print("---------------------------------------------------------------")
-        print("\tdata sent:", "\'" + data_to_send + "\'")
-        print("\tdata sent from:", sock.getsockname())
+        print("\tdata sent from:", sock.getsockname(), "[client socket/this module]")
         print("\tdata sent to:", (server_address, server_port))
-        print("---------------------------------------------------------------\n")
+        print("\tdata sent:", "\'" + data_to_send + "\'")
+        print("---------------------------------------------------------------")
+        print()
         
