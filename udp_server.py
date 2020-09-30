@@ -26,18 +26,17 @@ print()
 # step 2: bind the socket to a port on the server module
 #IN-GAME: after they press "bind" and type in the port to bind to, 
 # the port on the module's port that they specified should visibly open up.
-
-# bind the socket
 input("press enter to bind the socket to an ip address & port")
 
 # ask for socket info
 server_address = input("\tplease enter the ip address of this module: ")
 server_port = int(input("\tplease enter a port to use on this module: "))
 
+# bind the socket
 sock.bind((server_address, server_port))
 
 # DEBUGGING: prints out the address & port bound to the socket
-print("\nnow receiving data on server socket with address & port:", sock.getsockname())
+print("\nready to received data on server socket with address & port: ", sock.getsockname())
 
 
 
